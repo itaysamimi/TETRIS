@@ -21,10 +21,10 @@ def opening_screen():
         load_img(PLAY_PATH, PLAY_WIDTH, PLAY_HEIGHT, X_PLAY, Y_PLAY, screen)
 
         for event in pygame.event.get():
-            if event == pygame.QUIT:
+            if event.type == pygame.QUIT:
                 finish = True
 
-            elif event == pygame.MOUSEBUTTONDOWN:
+            elif event.type == pygame.MOUSEBUTTONDOWN:
                 pos = pygame.mouse.get_pos()
                 if mouse_in_button(PLAY_BUTTON, pos):
                     game_screen()
