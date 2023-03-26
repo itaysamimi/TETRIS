@@ -19,6 +19,7 @@ def opening_screen():
     while not finish:
         screen.fill(BLACK)
         load_img(PLAY_PATH, PLAY_WIDTH, PLAY_HEIGHT, X_PLAY, Y_PLAY, screen)
+        load_img(LOGO_PATH, LOGO_WIDTH, LOGO_HEIGHT, X_LOGO, Y_LOGO, screen)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -96,8 +97,8 @@ def game_screen():
 
         screen.blit(text, (0, 0))
         if game.state == "gameover":
-            screen.blit(text_game_over, [20, 200])
-            screen.blit(text_game_over1, [25, 265])
+            screen.blit(text_game_over, LOC_GAME_OVER)
+            screen.blit(text_game_over1, LOC_PRESS_ESC)
 
         pygame.display.flip()
         clock.tick(FPS)
